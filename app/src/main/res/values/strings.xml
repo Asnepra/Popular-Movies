@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Popular Movies 5</string>
+    <string name="Movie">Movie Name</string>
+    <string name="Pref">Mypref</string>
+    <string name="rating_p1">vote_average.desc</string>
+    <string name="rating_p2">vote_count.gte=1000</string>
+    <string name="movie_detail">Movie Details</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Trailer">Trailer</string>
+</resources>

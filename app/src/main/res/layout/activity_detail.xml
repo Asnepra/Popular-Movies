@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?><!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ankit.popularmovies5.DetailActivity">
+
+</RelativeLayout>-->
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ankit.popularmovies5.DetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/deatil_activity_movie_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorTextView"
+                android:paddingBottom="@dimen/margin_large"
+                android:paddingLeft="@dimen/margin_large"
+                android:paddingRight="@dimen/margin_large"
+                android:paddingTop="@dimen/margin_large"
+                android:text="Movie Name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="#000000"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/detail_activity_main_poster"
+                android:layout_width="250dp"
+                android:layout_height="345dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/deatil_activity_movie_title"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="@dimen/margin_large"
+                android:cropToPadding="false"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cute_girl1" />
+
+            <TextView
+                android:id="@+id/detail_activity_release_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/detail_activity_main_poster"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/detail_activity_main_poster"
+                android:layout_toRightOf="@+id/detail_activity_main_poster"
+                android:text="Year : 2015"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/detail_activity_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/detail_activity_release_date"
+                android:layout_alignStart="@+id/detail_activity_release_date"
+                android:layout_below="@+id/detail_activity_release_date"
+                android:layout_marginTop="70dp"
+                android:text="Ratings: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="15sp" />
+
+            <RatingBar
+                android:id="@+id/detail_activity_ratingbar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/detail_activity_rating"
+                android:layout_alignStart="@+id/detail_activity_rating"
+                android:layout_below="@+id/detail_activity_rating"
+                android:layout_gravity="center"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="5.0"
+                android:stepSize="0.25" />
+
+            <TextView
+                android:id="@+id/detail_activity_synopsis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/detail_activity_main_poster"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:lineSpacingMultiplier="@dimen/body_text_line_spacing"
+                android:text="Movie Information"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/detail_activity_HorizontalLine"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/detail_activity_synopsis"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:background="#000000" />
+
+            <!--  <android.support.v7.widget.RecyclerView
+                  android:id="@+id/deatil_activity_trailer_recycler_view"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/detail_activity_HorizontalLine"
+                  android:scrollbars="horizontal" />-->
+            <include
+                android:id="@+id/trailer_view"
+                layout="@layout/trailers_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@+id/detail_activity_HorizontalLine"></include>
+
+            <View
+                android:id="@+id/detail_activity_HorizontalLine2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/trailer_view"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:background="#000000" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/detail_activity_comment_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/detail_activity_HorizontalLine2"
+                android:paddingTop="20dp"
+                android:scrollbars="vertical" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:src="@android:drawable/ic_dialog_email"
+                android:layout_alignBottom="@+id/detail_activity_HorizontalLine"
+                android:layout_alignRight="@+id/detail_activity_ratingbar"
+                android:layout_alignEnd="@+id/detail_activity_ratingbar" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
